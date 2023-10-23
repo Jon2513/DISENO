@@ -1,0 +1,15 @@
+p{
+  font-size: small;
+}
+@media (max-width: 767px) {
+  .imagen-movil {
+    width: 200px;
+  }
+}
+h7{
+  font-size: small;
+}
+
+  .imagen-movillink {
+    width: 40px;  
+  }
