@@ -1,0 +1,12 @@
+1:aumente de tamaño al doble, despacio rapido  despacio, del centro a fuera 3s
+
+2: desaparezca , despacio rapido, 2s
+
+3:se mueva  a la derecha(la anchura de img), despues de 1 seg opacidad 0.1 durante 3s y cambio de fondo despues de 2seg durante 2seg(la misma pero se cambia de color) durante 4seg
+
+4:  disminuya hacia la esquina superior derecha, a los dos segundos al minimo que se pueda
+
+5/6: a la vez
+
+5:crezca(1.2) con origen en el centro 3seg
+6: girar durante  hacia la izq hasta que quede al reves durante 3seg

@@ -1,0 +1,63 @@
+
+
+#vineta1{
+transition: all 3s;
+}
+#vineta1:hover{
+    transform: scale(2);
+    transform-origin: center;
+}
+
+#vineta2{
+    opacity: 1;
+    transition: all 2s;
+}
+#vineta2:hover{
+    opacity: 0;
+}
+
+#vineta3 {
+    width: 148px;
+    height: 422px;
+    background-image: url('vineta/vineta3.png');
+    transition-delay: background-image 1s;
+    transition: background-image 2s, transform 2s, opacity 2s;
+}
+
+#vineta3:hover {
+    transform: translateX(160px);
+   opacity: 1;
+   background-image: url('vineta/vineta3-negro.png');
+}
+#vineta4{
+    transition:transform 2s;
+    transform-origin: right top;
+}
+#vineta4:hover{
+    transform: scale(0);
+}
+#juntos:hover #vineta5{
+    transform: scale(1.1);
+    transform-origin: center;
+}
+#juntos #vineta6{
+    transition: all 3s;
+}
+#juntos:hover #vineta6{
+    transform: rotate(-180deg);
+}
+#juntos #vineta5{
+    transition: all 3s;
+}
+body{
+    margin-top: 30px;
+}
+#primera, #segunda,#juntos {
+    text-align: center;
+}
+  
+#primera img, #segunda img , #juntos,#vineta3{
+    display: inline-block;
+}
+
+  
