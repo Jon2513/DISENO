@@ -1,0 +1,163 @@
+
+#botonera {
+    margin-left: 20px;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#reiniciar {
+    width: 100px;
+    height: 50px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+#aciertos {
+    margin-top: 10px;
+    margin-left: 100px;
+    width: 100px;
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+    text-align: center;
+    border: black 1px solid;
+}
+
+#fallos {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 100px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    border-radius: 12px;
+    text-align: center;
+    border: black 1px solid;
+}
+
+#pikachu .anverso {
+    background-image: url("pikachu.png");
+    transform: rotateY(180deg);
+}
+
+#furioseta .anverso {
+    background-image: url("furioseta.png");
+    transform: rotateY(180deg);
+}
+
+#tapu .anverso {
+    background-image: url("tapu.png");
+    transform: rotateY(180deg);
+}
+
+#pajaros .anverso {
+    background-image: url("pajaros.png");
+    transform: rotateY(180deg);
+}
+
+#articuno .anverso {
+    background-image: url("articuno.png");
+    transform: rotateY(180deg);
+}
+
+#charmander .anverso {
+    background-image: url("charmander.png");
+    transform: rotateY(180deg);
+}
+
+
+.reverso {
+    background-image: url('reverso.png');
+    z-index: 1;
+    transition: all 0.5s;
+}
+
+.anverso {
+    z-index: 0;
+    transition: all 0.5s;
+}
+
+.baraja {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.carta {
+    opacity: 0.7;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    width: 2.47in;
+    height: 3.5in;
+    transition: all 0.5s;
+}
+
+.carta>div {
+    width: 2.5in;
+    height: 3.5in;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.anverso {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carta:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.carta.girada:hover {
+    cursor: default;
+}
+
+.girada {
+    opacity: 1;
+    transform: rotateY(180deg);
+}
+
+.girada .anverso {
+    z-index: 1;
+}
+
+.girada .reverso {
+    z-index: 0;
+}
+
+.correcta {}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
