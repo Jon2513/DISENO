@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+
+}
+#jarra{
+    width: 450px;
+    height: 360px;
+    position: absolute;
+    background-image: url(jarra.png);
+    background-size: content;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#proveta{
+    width: 450px;
+    height: 370px;
+    position: absolute;
+    top: 400px;
+    left: 160px;
+    background-image: url(tarro.png);
+    background-size: content;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+}
+#liquido{
+    width: 270px;
+    height: 0px;
+    position: absolute;
+    top: 400px;
+    left: 250px;
+    background-color: aqua;
+    background-size: content;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+body:hover #jarra {
+    animation: jarra 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+body:hover #liquido {
+    animation: liquido 5s;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes jarra{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    85% {
+        transform: rotate(45deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+    
+    
+}
+@keyframes liquido {
+    0% {
+        height: 0px;
+        top: 770px;
+        background-color: greenyellow
+    }
+
+    100% {
+        height: 300px;
+        top: 460px;
+        background-color: greenyellow;
+    }
+}
+@keyframes lleno {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
