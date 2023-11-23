@@ -1,0 +1,267 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #fafafa;
+}
+
+#barra,
+#publicacion {
+    background-color: white;
+}
+
+#nombreInstagram {
+    width: 100px;
+    height: 25px;
+    left: 25%;
+    position: relative;
+}
+
+#iconoInstagram {
+    position: relative;
+    left: 24%;
+}
+
+.input-wrapper {
+    display: inline;
+}
+
+#publicacion {
+    border: 1px solid #dbdbdb;
+    height: 602px;
+    margin-top: 50px;
+}
+
+#feed {
+    background: white;
+}
+
+
+#imgRosalia {
+    width: 100%;
+    position: relative;
+}
+
+#imgRosalia img {
+    width: 100%;
+}
+
+#autor {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.fotoPerfil {
+    border-radius: 100%;
+    border: transparent;
+    width: 50px;
+    height: 50px;
+    display: inline;
+    float: left;
+    margin: 15px;
+}
+
+.conHistoria {
+    border: 3px solid violet;
+}
+
+#textoAutor {
+    float: left;
+}
+
+#localizacion {
+    margin-top: -15px;
+}
+
+#seguir {
+    color: #3897f0;
+}
+
+#comentarios {
+    width: 100%;
+    float: left;
+
+}
+
+#comentario {
+    width: 100%;
+}
+
+#añadirComentario {
+    text-align: center;
+}
+
+.infoComentario {
+    color: #999999;
+}
+
+#opciones {
+    position: relative;
+    left: 3em;
+    top: 2em;
+}
+
+#iconos {
+    width: 100%;
+    float: left;
+    border-top: 1px #dddddd solid;
+}
+
+#conjuntoIconos {
+    margin: 10px;
+}
+
+#marcador {
+    float: right;
+}
+
+#infoMeGusta {
+    width: 100%;
+    float: left;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.tiempoPublicacionPost {
+    width: 100%;
+    float: left;
+    color: #999999;
+    margin-left: 10px;
+}
+
+#iniciarSesion {
+    float: left;
+    border-top: 1px #dddddd solid;
+    color: #a9a7a8;
+    width: 100%;
+
+}
+
+#iniciarSesion p {
+    margin-left: 10px;
+}
+
+
+#iniciarSesion a {
+    text-decoration: none;
+}
+
+#pc {
+    display: none;
+}
+
+#tagUser {
+    float: left;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #000000a3;
+    position: absolute;
+    bottom: 13px;
+    left: 10px;
+}
+
+
+#barra {
+    font-size: 30px;
+    border-bottom: 1px solid #dcdcdc;
+    padding: 15px;
+    background-color: white;
+
+}
+
+#barra * {
+    vertical-align: middle;
+}
+
+#busqueda {
+    position: relative;
+    left: 53%;
+}
+
+#lupa {
+    position: relative;
+    left: 50.3%;
+    font-size: 12px;
+    color: #a5a7aa;
+}
+
+
+input {
+    display: none;
+}
+
+@media screen and (min-width: 1000px) {
+    #publicacion {
+        width: 813px;
+        position: relative;
+        left: 25%;
+    }
+
+    #feed {
+        width: 333px;
+        float: right;
+    }
+
+    #imgRosalia {
+        width: 480px;
+        display: inline;
+    }
+
+    #imgRosalia img {
+        width: 480px;
+        display: inline;
+    }
+
+    #pc {
+        display: block;
+    }
+
+    #movil {
+        display: none;
+    }
+
+    #iniciarSesion {
+        float: left;
+        border-top: 1px #dddddd solid;
+        color: #a9a7a8;
+        width: 100%;
+
+    }
+
+    input {
+        display: inline;
+    }
+
+
+}
+
+@media screen and (max-width: 1000px) and (min-width: 600px) {
+
+    #publicacion {
+        width: 100%;
+    }
+
+    #imgRosalia {
+        width: 50%;
+        float: left;
+
+    }
+
+    #feed {
+        width: 50%;
+        float: left;
+    }
+
+    #pc {
+        display: block;
+    }
+
+
+    #movil {
+        display: none;
+    }
+}
