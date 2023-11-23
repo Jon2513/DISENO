@@ -1,0 +1,64 @@
+#ramen{
+   
+}
+#comida{
+ position: absolute;
+ top: 200px;
+ left:350px;
+ opacity: 1;
+}
+#cocinado{
+    position: absolute;
+    top: 200px;
+    left:350px;
+    opacity: 0;
+   }
+#quemado{
+    position: absolute;
+    top: 200px;
+    left:350px; 
+    opacity: 0;
+}
+#cuenco{
+ position: absolute;
+ top: 325px; 
+ left: 350px; 
+}
+#apagada{
+ position: absolute;
+ height: 100px;
+ top: 710px; 
+ left: 320px; 
+}
+#fuego{
+    position: absolute;
+    height: 300px;
+    top: 445px; 
+    left: 385px;
+    opacity: 0; 
+   
+   }
+#cocinar:hover #fuego{
+    opacity: 1;
+    transition: 2s;
+}
+#cocinar:hover #humo{
+    transition: all 2s 5s;
+    opacity: 1;
+   
+}
+#humo{
+    position: absolute;
+    height: 100px;
+    left: 450px;
+    top: 100px;
+    opacity: 0;
+}
+#cocinar:hover #cocinado{
+    transition: all 0.1s 10s;
+    opacity: 1;
+}
+#cocinar:hover #quemado{
+    transition: all 0.1s 20s;
+   opacity: 1;
+}
