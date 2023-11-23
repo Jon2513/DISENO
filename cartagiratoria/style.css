@@ -1,0 +1,36 @@
+#reverso{
+background-image: url("reverso.png");
+height: 503px;
+width: 360px;
+position: absolute;
+top: 0px;
+background-position: center;
+transition: transform 0.7s;
+
+transition: opacity 0s 0.s;
+
+}
+#pkmn{
+    background-image: url("carta.png");
+   height: 503px;
+   width: 360px;
+   background-position: center;
+   position: absolute;
+   top: 0px;  
+   transform: rotateY(180deg);
+}
+#cartas:hover{
+    transform: rotateY(180deg);
+}
+#cartas:hover #reverso{
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+#cartas{
+    height: 503px;
+    width: 360px;
+    transition: 0.7s;
+    position: absolute;
+    top: 16px;
+    left: 25px;
+}
