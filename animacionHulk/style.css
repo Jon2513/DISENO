@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+#harry{
+    background-image: url("harry.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 150px;
+    z-index: 2;
+    position: absolute;
+    top: 510px;
+    left: 1560px;
+    opacity: 1;
+
+}
+#cabeza{
+    background-image: url("cabeza.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 90px;
+    width: 100px;
+    z-index: 2;
+    position: absolute;
+    top: 480px;
+    left: 1480px;
+}
+#lengua{
+    background-image: url("lengua.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 70px;
+    width: 70px;
+    z-index: 2;
+    position: absolute;
+    top: 549px;
+    left: 1440px;
+}
+#pecho{
+    background-image: url("pecho.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 390px;
+    width: 200px;
+    z-index: 1;
+    position: absolute;
+    top: 470px;
+    left: 1450px;
+}
+#pelvis{
+    background-image: url("pelvis.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90px;
+    width: 95px;
+    z-index: 0;
+    position: absolute;
+    top: 580px;
+    left: 1560px;
+}
+#piernaIzq{
+    background-image: url("piernaizq.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 150px;
+    z-index: 3;
+    position: absolute;
+    top: 600px;
+    left: 1610px;
+}
+#piernaDer{
+    background-image: url("piernadrch.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 150px;
+    z-index: 0;
+    position: absolute;
+    top: 600px;
+    left: 1463px;
+}
+#brazoIzq{
+    background-image: url("brazoizq.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 150px;
+    z-index: 4;
+    position: absolute;
+    top: 470px;
+    left: 1600px;
+}
+#brazoDer{
+    background-image: url("brazodrch.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 200px;
+    width: 150px;
+    z-index: 0;
+    position: absolute;
+    top: 510px;
+    left: 1370px;
+}
+#venom{
+    opacity: 0;
+    animation: venom 4s ;
+    animation-delay: 1s;
+}
+#brazoIzq{
+    animation: brazoIzq 1s ;
+    animation-delay: 2s;
+}
+#harry{
+    animation: harry 2.5s ;
+    opacity: 0;
+
+}
+#fondo{
+    background-image: url("fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+#coche {
+    background-image: url("coche.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 400px;
+    z-index: 1;
+    position: absolute;
+    top: 450px;
+    animation: palante 4s forwards; 
+}
+
+@keyframes palante {
+    70% {
+        transform: translateX(1300px);
+        opacity: 1;
+    }
+    71% {
+        transform: translateX(1300px) rotate(-30deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0px, -450px) rotate(-45deg) scale(0.1);
+        opacity: 0;  
+    }
+}
+@keyframes venom {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes harry {
+    0% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    10%{
+        transform: scale(1.2);
+    }
+    20%{
+        transform: scale(1);
+    }
+    30%{
+        transform: scale(1.2);
+    }
+    40%{
+        transform: scale(1.8);
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+@keyframes brazoIzq {
+    0% {
+        transform: rotateZ(0deg);
+
+    }
+    100% {
+        transform: translate(-100px, -20px) rotateZ(90deg);
+    }
+    
+}
