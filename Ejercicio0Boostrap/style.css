@@ -1,0 +1,179 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    background-color: #FFF;
+    font-family: 'trebuchet ms', arial, sans-serif;
+    color: #555;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #362C20;
+    font-weight: normal;
+}
+
+a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    font-family: 'century gothic', arial;
+}
+
+/* Estilos para el encabezado */
+#header {
+    background-color: #000;
+    border-bottom: 1px solid #3d3d3d;
+    text-align: center;
+}
+
+#logo {
+    background-color: #1d1d1d00;
+    padding-top: 10px;
+}
+
+/* Estilos para la barra de menú */
+#menubar {
+    width: 100%;
+    padding-right: 4px;
+    background: rgba(115, 114, 114, 0.18);
+    border-top: 1px solid #3D3D3D;
+}
+
+#menu {
+    margin: 0;
+    padding: 0;
+}
+
+#menu li {
+    background-color: #5b4239;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+
+    display: inline-block;
+
+}
+
+#menu li:hover {
+    background-color: #b48a7a;
+}
+
+#menu li::marker {
+    color: transparent;
+}
+
+/* Estilos para el banner */
+#banner {
+    margin: 18px 0;
+    background: url(./img/banner.jpg) no-repeat;
+    background-size: cover;
+    height: 200px;
+    border: 10px solid #DDD;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+
+/* Estilos para el contenido de noticias */
+#sidebar_container{
+    
+    float: left;
+    width: 20%;
+   
+    margin-left: 3%;
+    
+}
+.sidebar_item{
+    margin-top: 8%;
+    border: 1px solid #DDD;
+    margin-bottom: 8%;
+    border-radius: 10px;
+    padding: 5px;
+}
+.sidebar_item h3{
+    font-size: 16px;
+}
+
+.sidebar_item h3,h5{
+    margin-top: 0;
+}
+.sidebar_item h4{
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #a69083;
+    font-size: 14px;
+}
+
+.sidebar_item h5{
+    color: #868d93;
+    font-size: 11px;
+}
+
+.sidebar_item p{
+    line-height: 1.5;
+}
+.sidebar_item a{
+    color: #a69083;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+
+
+/* Estilos para el contenido principal */
+#content {
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 10px;
+    padding: 0px;
+    float: right;
+    width: 70%;
+  
+}
+
+#content h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 5px;
+    color: #a69083;
+}
+
+/* Estilos para las listas de elementos */
+#link li::marker,
+#content li::marker {
+    color: #5353ec;
+}
+
+/* Estilos para el pie de página */
+#footer {
+    background-color: #000;
+    border-top: 1px solid #3d3d3d;
+    text-align: center;
+    padding: 10px;
+    color: #FFF;
+    font-size: 12px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    clear: both;
+    
+}
+@media (max-width: 768px) {
+    #sidebar_container {
+        display: block; /* Cambiar a bloque en dispositivos móviles */
+        width: 100%; /* Ancho completo en dispositivos móviles */
+        margin-left: 0; /* Eliminar el margen izquierdo en dispositivos móviles */
+        margin-bottom: 10px; /* Agregar espacio en la parte inferior en dispositivos móviles */
+    }
+
+    #content {
+        width: 100%; /* Ancho completo en dispositivos móviles */
+        float: none; /* Eliminar el float en dispositivos móviles */
+        margin-right: 0; /* Eliminar el margen derecho en dispositivos móviles */
+    }
+}
+
