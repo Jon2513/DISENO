@@ -142,11 +142,11 @@ body {
 
 @keyframes palante {
     70% {
-        transform: translateX(1300px);
+        transform: translateX(1270px);
         opacity: 1;
     }
     71% {
-        transform: translateX(1300px) rotate(-30deg);
+        transform: translateX(1270px) rotate(-30deg);
         opacity: 1;
     }
     100% {
