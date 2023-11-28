@@ -1,0 +1,1797 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+  background-image: url("recursos/fondo/fondo0.avif");
+  background-size: cover;
+}
+.active{
+  opacity: 1;
+  transform: scale(1.1);
+}
+.game-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input,
+select,
+button {
+  margin: 10px;
+  padding: 10px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.temporizador {
+  position: relative;
+  top: 0;
+  font-size: 14px;
+  color:   #1ddc46;
+  font-weight: bold;
+  margin: 10px;
+  padding: 0 32px;
+  position: fixed;
+  border-radius: 6px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.5);
+  z-index: 4;
+}
+.temporizadorBorde{
+  position: absolute;
+  top: 0px;
+  left: 35%;
+  height: 100px;
+  width: 500px;
+  background-image: url("recursos/acero.jpg");
+  z-index: 3;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+.textoTiempo{
+  color: #1ddc46;
+  opacity: 0.5;
+}
+
+input[type="time"] {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 5px;
+  color: #1ddc46;
+  opacity: 0.7;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+}
+/*--Recalentamiento--*/
+#recalentamientoBorde{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 0 32px;
+  position: fixed;
+  bottom: 15px;
+  left: 40%;
+  border-radius: 6px;
+  height: 85px;
+  width: 300px;
+  background-image: url("recursos/acero.jpg");
+  z-index: 3;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+#recalentamiento label{
+  opacity: 0.6;
+}
+#recalentamiento{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+ margin-left: 25px;
+ margin-top: 10px;
+  color:#1ddc46;
+  border-radius: 6px;
+  height: 65px;
+  width: 250px;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  z-index: 4;
+}
+
+/*--Datos--*/
+.contenedor{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0 32px;
+  position: fixed;
+  bottom: 15px;
+  left: 10%;
+  border-radius: 6px;
+  height: 105px;
+  width: 350px;
+  background-image: url("recursos/acero.jpg");
+  z-index: 3;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+.detalles{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+ margin-left: 25px;
+ margin-top: 10px;
+  color:#1ddc46;
+  border-radius: 6px;
+  height: 85px;
+  width: 300px;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  z-index: 4;
+}
+.detalles div{
+  opacity: 0.6;
+}
+#labelSuper{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+#labelEnergia{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 32px;
+  margin-left: 10px;
+}
+#labelCasco{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 54px;
+  margin-left: 10px;
+}
+#labelDatosS{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 7px;
+  margin-left: 175px;
+}
+#labelDatosE{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 30px;
+  margin-left: 175px;
+}
+#labelDatosD{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 52px;
+  margin-left: 175px;
+}
+#labelDatosS,#labelDatosE,#labelDatosD{
+  opacity: 0;
+}
+#detalles:hover{
+  #labelDatosS,#labelDatosE,#labelDatosD{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+  }
+
+}
+#survivor-meter{
+  position: absolute;
+  top: 0px;
+  margin-top: 12px;
+  left: 210px;
+}
+#energy-meterD{
+  position: absolute;
+  top: 0px;
+  margin-top: 35px;
+  left: 210px;
+}
+#damage-meter{
+  position: absolute;
+  top: 0px;
+  margin-top: 57px;
+  left: 210px;
+}
+
+.botonera {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  margin: 0 15px;
+}
+
+.botonera button {
+  cursor: pointer;
+  background: transparent;
+  height: 38px;
+  width: 38px;
+  font-size: 18px;
+  border-radius: 6px;
+  color: white;
+  border: rgb(2, 255, 2) 1px solid;
+  opacity: 0.5;
+}
+.botonera button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+#arma {
+  background-image: url("recursos/weapon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+#shield {
+  background-image: url("recursos/shield.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+
+#motor {
+  background-image: url("recursos/engineering.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#propulsor {
+  background-image: url("recursos/enfriamiento.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#shield-interface {
+  position: absolute;
+  top: 135px;
+  left: 0;
+  z-index: 3;
+}
+
+#energy-meterShield {
+  position: absolute;
+  top: 20px;
+  left: 125px;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  perspective: 800px;
+  transform: rotateX(20deg);
+}
+
+#labelenergyShield {
+  position: absolute;
+  top: 0px;
+  left: 125px;
+  width: 100px;
+  height: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  color: #1ddc46;
+  opacity: 0.7;
+  perspective: 800px;
+  transform: rotateX(20deg);
+
+}
+/*Estrella fugaz*/
+@keyframes shootingStar {
+  0% {
+   
+    opacity: 1;
+  }
+  75%{
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1300px) translateY(300px);
+
+    opacity: 0;
+  }
+}
+
+.star {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 150px;
+  height: 100px;
+ background-image: url("recursos/estrellafugaz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: shootingStar 2s  infinite;
+  opacity: 0;
+  z-index: 0;
+  animation-delay: 8s ;
+}
+.star2{
+  position: absolute;
+  top: 200px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+ background-image: url("recursos/estrellafugaz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: shootingStar 2s    infinite;
+
+  opacity: 0;
+  z-index: 0;
+  animation-delay:4s ;
+}
+.star3{
+  position: absolute;
+  top: 300px;
+  left: 0px;
+  width: 180px;
+  height: 100px;
+ background-image: url("recursos/estrellafugaz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: shootingStar 1s    infinite;
+  opacity: 0;
+  z-index: 0;
+  animation-delay: 5s ;
+}
+.star4{
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  width: 100px;
+  height: 100px;
+ background-image: url("recursos/estrellafugaz.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: shootingStar 4s  infinite;
+  opacity: 0;
+  z-index: 0;
+  animation-delay: 3s ;
+}
+/*---Escudo---*/
+#shield-control{
+
+  width: 190px;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(to right,#023a02, #1ddc46 );
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  perspective: 800px;
+  transform: rotateX(20deg);
+}
+
+#shield-control:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#shield-control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#shield-control::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.shieldLabel{
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  color: #1ddc46;
+  opacity: 1;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  font-size: 20px;
+}
+.shieldInfo{
+  position: absolute;
+  top: -5px;
+  left: 150px;
+  color: #1ddc46;
+  opacity: 1;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  font-size: 22px;
+  height: 40px;
+  width: 40px;
+  border: #1ddc46 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*---Propulsor---*/
+.enfriamientoInfo{
+  position: absolute;
+  top: -5px;
+  left: 150px;
+  color: #1ddc46;
+  opacity: 1;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  font-size: 22px;
+  height: 40px;
+  width: 40px;
+  border: #1ddc46 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.enfriamientoLabel{
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  color: #1ddc46;
+  opacity: 1;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  font-size: 16px;
+}
+#propulsor-interface {
+  position: absolute;
+  top: 135px;
+  left: 0;
+  z-index: 3;
+  font-size: 10px;
+}
+#speed-slider{
+
+  width: 190px;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(to right,#023a02, #1ddc46 );
+  border-radius: 5px;
+  outline: none;
+  opacity: 0.7;
+  perspective: 800px;
+  transform: rotateX(20deg);
+}
+
+#speed-slider:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: white;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#speed-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#mas{
+  position: absolute;
+  top: 7px;
+  left: 125px;
+  font-size: 9px;
+  background: transparent;
+  color: #1ddc46;
+  border: #1ddc46 1px solid;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  opacity: 0.5;
+  border-radius: 6px;
+}
+#menos{
+ position: absolute;
+  top: 7px;
+  left: 175px;
+  font-size: 9px;
+  background: transparent;
+  color: #1ddc46;
+  border: #1ddc46 1px solid;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  opacity: 0.5;
+  border-radius: 6px;
+}
+#mas:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+#menos:hover{
+  opacity: 1;
+  transform: scale(1.1);
+  
+}
+#dch{
+  position: absolute;
+  top: 74px;
+  left: 175px;
+  background: transparent;
+  height: 38px;
+  width: 38px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: rgb(2, 255, 2) 1px solid;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  opacity: 0.5;
+  background-image: url("recursos/derecha.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#izq{
+  position: absolute;
+  top: 74px;
+  left: 125px;
+  background: transparent;
+  height: 38px;
+  width: 38px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: rgb(2, 255, 2) 1px solid;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  opacity: 0.5;
+  background-image: url("recursos/izq.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#izq:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+#dch:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+#labelDireccion{
+  position: absolute;
+  top: 65px;
+  left: 160px;
+  color: #1ddc46;
+  opacity: 0.7;
+  perspective: 800px;
+  transform: rotateX(20deg);
+}
+#labelVelocidad{
+  position: absolute;
+  top: 0px;
+  left: 160px;
+  color: #1ddc46;
+  opacity: 0.7;
+  perspective: 800px;
+  transform: rotateX(20deg);
+}
+/*---Arma---*/
+#arma-interface {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  z-index: 3;
+  font-size: 10px;
+}
+#labelLaser{
+  width: 100px;
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  color: #1ddc46;
+  font-size: 12px;
+  opacity: 1;
+}
+#labelMisil{
+  width: 100px;
+  margin-top: 15px;
+  position: absolute;
+  left: 24px;
+  color: #1ddc46;
+  font-size: 12px;
+  opacity: 0.3;
+}
+#ammunition-meter{
+  position: absolute;
+  top: 38px;
+  left: 165px;
+  width: 30px;
+  font-size: 20px;
+  color: #1ddc46;
+  opacity: 0.3;
+  border: #1ddc46 1px solid;
+}
+#laser-meter{
+  position: absolute;
+  top: 0px;
+  left: 165px;
+  width: 30px;
+  font-size: 20px;
+  color: #1ddc46;
+  opacity: 1;
+  border: #1ddc46 1px solid;
+}
+#recargar,#cambiar,.habilitado{
+  
+  font-size: 10px;
+  background: transparent;
+  color: #1ddc46;
+  border: #1ddc46 1px solid;
+  opacity: 0.5;
+  border-radius: 6px;
+}
+.habilitado{
+  position: absolute;
+  top: 80px;
+  left: 0px;
+ 
+}
+.deshabilitado{
+  position: absolute;
+  top: 80px;
+  left: 0px;
+  font-size: 10px;
+  background: transparent;
+  color: #1ddc46;
+  border: #1ddc46 1px solid;
+  opacity: 0.2;
+  border-radius: 6px;
+}
+#recargar{
+  position: absolute;
+  top: 80px;
+  left: 68px;
+}
+#cambiar{
+  position: absolute;
+  top: 80px;
+  left: 140px;
+  width: 90px;
+}
+
+#recargar:hover,#cambiar:hover,.habilitado:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+.deshabilitado{
+  opacity: 0.2;
+}
+
+/*--Motor--*/
+#motor-salto-interface {
+  position: absolute;
+  top: 135px;
+  left: 0;
+  z-index: 3;
+  font-size: 10px;
+}
+
+
+#botonSalto{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 20px;
+  background: transparent;
+  color: #1ddc46;
+  border: #1ddc46 1px solid;
+  opacity: 0.5;
+  border-radius: 6px;
+}
+#botonSalto:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+#botonAterrizar{
+  position: absolute;
+  top: 0px;
+  left: 120px;
+  font-size: 20px;
+  background: transparent;
+  color: #1ddc46;
+  border: #1ddc46 1px solid;
+  opacity: 0.5;
+  border-radius: 6px;
+}
+#botonAterrizar:hover{
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/*---BotonSaltoEmergencia---*/
+.saltoE {
+  position: fixed;
+  bottom: 0px;
+  background: gray;
+  height: 150px;
+  width: 100%;
+  background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  z-index: 2;
+  display: flex;
+}
+
+.saltoCaja {
+  position: fixed;
+  bottom: 130px;
+  background: rgb(78, 78, 78);
+  height: 100px;
+  width: 100%;
+  transform: perspective(500px) rotateX(45deg);
+  z-index: 2;
+}
+
+.lateral {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  background: gray;
+  height: 100%;
+  width: 63px;
+  z-index: 1;
+}
+
+.lateral2 {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background: gray;
+  height: 100%;
+  width: 63px;
+  z-index: 1;
+}
+
+.escena {
+  width: 250px;
+  height: 300px;
+  perspective: 800px;
+  transform: rotateX(20deg);
+  position: fixed;
+  bottom: 160px;
+  left: 15%;
+  z-index: 3;
+}
+
+.cabina {
+  perspective: 800px;
+  width: 250px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg);
+
+}
+
+.ventana {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(180deg, #222, #444);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.vidrio {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  border-radius: 10px;
+  box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.luces {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.luz {
+  width: 15px;
+  height: 15px;
+  background-color: #FFD700;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 223, 0, 0.7);
+}
+
+
+
+.saltoE-pushable {
+  position: relative;
+  border: none;
+  top: 0px;
+  height:60px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transform: perspective(500px) rotateX(20deg);
+}
+
+.saltoE-shadow {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.saltoE-edge {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 72px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(to left,
+      hsl(340deg 100% 16%) 0%,
+      hsl(340deg 100% 32%) 8%,
+      hsl(340deg 100% 32%) 92%,
+      hsl(340deg 100% 16%) 100%);
+}
+
+.saltoE-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  height: 50px;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+
+
+.saltoE-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.saltoE-pushable:hover .saltoE-front {
+  transform: translateY(-6px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.saltoE-pushable:active .saltoE-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.saltoE-pushable:hover .saltoE-shadow {
+  transform: translateY(4px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.saltoE-pushable:active .saltoE-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.saltoE-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+/*---Salto---*/
+.Salto{
+  position: absolute;
+  bottom: 35px;
+  right: 25%;
+  height: 100px;
+  background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, .1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+  transform: rotate(180deg);
+  z-index: 3;
+
+}
+.salto-pushable {
+  position: relative;
+  border: none;
+  top: 0px;
+  height:50px;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transform: perspective(800px) rotateX(20deg);
+}
+
+.salto-shadow {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.salto-edge {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 72px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(to left,
+      hsl(127, 100%, 16%) 0%,
+      hsl(134, 100%, 32%) 8%,
+      hsl(132, 100%, 32%) 92%,
+      hsl(135, 100%, 16%) 100%);
+}
+
+.salto-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  height: 50px;
+  color: white;
+  background: hsl(123, 100%, 47%);
+  will-change: transform;
+  transform: translateY(-4px) rotate(180deg);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+
+
+.salto-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.salto-pushable:hover .salto-front {
+  transform: translateY(-6px) rotate(180deg);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5) ;
+}
+
+.salto-pushable:active .salto-front {
+  transform: translateY(-2px) rotate(180deg);
+  transition: transform 34ms;
+}
+
+.salto-pushable:hover .salto-shadow {
+  transform: translateY(4px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.salto-pushable:active .salto-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.salto-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+/*---Holograma---*/
+
+.holograma {
+  position: fixed;
+  bottom: 180px;
+  left: 75%;
+  z-index: 2;
+}
+.planeta{
+  animation: rotar 50s infinite ;
+}
+.card {
+  position: relative; 
+  width: 200px;
+  height: 170px;
+  margin-top: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: float 1s infinite alternate;
+  opacity: 0.8;
+  background-color: transparent;
+  border: transparent 1px solid;
+}
+.explicacion{
+  position: absolute;
+  left: 0px;
+  bottom: 200px;
+  color: #1ddc46;
+  border-radius: 6px;
+  height: 300px;
+  width: 200px;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  opacity: 0.7;
+  z-index: 4;
+  animation: float 1s infinite alternate;
+}
+.base{
+  position: absolute;
+  left: 30px;
+  bottom: 0px;
+  width: 140px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  z-index: 5;
+}
+.basesombra{
+  position: absolute;
+  left: 25px;
+  bottom: -5px;
+  width: 150px;
+  height: 15px;
+  border-radius: 55%;
+  background-color: black;
+  z-index: 4;
+}
+
+.holo {
+  position: relative;
+  z-index: 2;
+  width: 150px;
+  height: 10px;
+  margin: -5px auto 0;
+  background-color: rgba(71, 130, 35, 0.35);
+  border-radius: 50%;
+  filter: blur(2.5px);
+  transform: perspective(100px) rotateX(-30deg);
+  transform-style: preserve-3d;
+  animation: holographic 1s infinite alternate ;
+  backface-visibility: hidden;
+}
+
+.holo:after {
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  content: "";
+  height: 10px;
+  background-color: rgba(71, 130, 54, 0.5);
+  border-radius: 100%;
+  filter: blur(3px);
+}
+.pocotiempo{
+  animation: tiempo 0.5s infinite alternate ;
+}
+.holo+.holo {
+  animation-duration: 0.75s;
+  opacity: 0.7;
+}
+@keyframes tiempo{
+  0%{
+    scale: 1;
+  }
+  100%{
+    scale: 1.1;
+  }
+}
+@keyframes float {
+  from {
+    will-change: unset;
+    transform: translateY(-5px);
+  }
+
+  to {
+    will-change: transform;
+    transform: translateY(-15px);
+  }
+}
+@keyframes rotar {
+  0% {
+    transform: rotate();
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes holographic {
+  from {
+    will-change: box-shadow;
+    box-shadow:
+      0 -75px 5px rgba(72, 237, 72, 0.15),
+      0 -1px 2px rgba(72, 237, 72, 0.5),
+      0 -45px 5px rgba(72, 237, 72, 0.15),
+      0 -2px 3px rgba(72, 237, 72, 0.5),
+      0 -3px 4px rgba(72, 237, 72, 0.5),
+      0 -4px 6px rgba(72, 237, 72, 0.5),
+      0 -5px 10px rgba(72, 237, 72, 0.75),
+      0 -7px 20px rgba(72, 237, 72, 0.75),
+      0 -10px 30px rgba(72, 237, 72, 0.75),
+      0 -15px 40px rgba(72, 237, 72, 0.75),
+      0 -25px 50px rgba(72, 237, 72, 0.75),
+      0 -35px 60px rgba(72, 237, 72, 0.85),
+      0 -45px 70px rgba(72, 237, 72, 0.95),
+      0 -65px 80px rgba(72, 237, 72, 1),
+      0 -75px 90px rgba(72, 237, 72, 1);
+  }
+
+  to {
+    will-change: unset;
+    box-shadow:
+      0 -1px 5px rgba(72, 237, 72, 0.15),
+      0 -1px 2px rgba(72, 237, 72, 0.5),
+      0 -1px 5px rgba(72, 237, 72, 0.15),
+      0 -2px 3px rgba(72, 237, 72, 0.5),
+      0 -3px 4px rgba(72, 237, 72, 0.5),
+      0 -4px 6px rgba(72, 237, 72, 0.5),
+      0 -5px 7px rgba(72, 237, 72, 0.75),
+      0 -7px 10px rgba(72, 237, 72, 0.75),
+      0 -10px 15px rgba(72, 237, 72, 0.75),
+      0 -15px 20px rgba(72, 237, 72, 0.75),
+      0 -25px 25px rgba(72, 237, 72, 0.75),
+      0 -35px 30px rgba(72, 237, 72, 0.85),
+      0 -45px 35px rgba(72, 237, 72, 0.95),
+      0 -65px 40px rgba(72, 237, 72, 1),
+      0 -75px 50px rgba(72, 237, 72, 1);
+  }
+}
+/*---Planeta---*/
+.planeta:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+/*---Recalentamiento---*/
+.tiempo{
+  margin-top: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  
+}
+.tiempo::-webkit-progress-bar {
+  background-color: #282828;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  height: 10px;
+}
+.tiempo::-webkit-progress-value {
+  background-color: hsl(345deg 100% 47%);
+  border-radius: 6px;
+  height: 10px;
+}
+.tiempomedio{
+  margin-top: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  
+}
+.tiempomedio::-webkit-progress-bar {
+  background-color: #282828;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  height: 10px;
+}
+.tiempomedio::-webkit-progress-value {
+  background-color: hsl(45, 100%, 47%);
+  border-radius: 6px;
+  height: 10px;
+}
+.tiempobajo{
+  margin-top: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  
+}
+.tiempobajo::-webkit-progress-bar {
+  background-color: #282828;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  height: 10px;
+}
+.tiempobajo::-webkit-progress-value {
+  background-color: hsl(125, 100%, 47%);
+  border-radius: 6px;
+  height: 10px;
+}
+.planetaAterrizar{
+  animation: aterrizar 3s  forwards ;
+  z-index: 0;
+}
+
+/*--AnimacionAterrizar--*/
+
+@keyframes aterrizar {
+  from {
+    transform: scale(1);
+    
+  }
+
+  to {
+
+   width: 850px;
+    height: 850px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+/*--ModalRecursos--*/
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 6;
+  left: 5%;
+  top: 0px;
+  width: 280px;
+  height: 200px;
+  overflow: auto;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  color: #1ddc46;
+  border: 3px solid #1ddc46;
+  font-size: 15px;
+  border-radius: 6px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+.modalContent{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.close2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #1ddc46;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.close:hover{
+  color: #147957;
+}
+/*ModalInfo*/
+.modalInfo {
+  display: none;
+  position: fixed;
+  z-index: 6;
+  left: 5%;
+  top: 0px;
+  width: 400px;
+  height: auto;
+  padding: 15px;
+  background: radial-gradient(circle at 50% 30%, #147957, #023a02);
+  color: #1ddc46;
+  border: 3px solid #1ddc46;
+  font-size: 15px;
+  border-radius: 6px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modalContentInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalInfo h6 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.modalInfo p {
+  margin: 5px 0;
+}
+
+#closeInfo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #1ddc46;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#closeInfo:hover {
+  color: #147957;
+}
+
+/*--Naves*/
+.media{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("recursos/media.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: aparecer 2s forwards;
+}
+.caza{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("recursos/caza.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: aparecer 2s forwards;
+}
+.galeon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 400px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("recursos/galeon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: aparecer 2s forwards;
+}
+/*--AnimacionAparecer--*/
+@keyframes aparecer {
+  from {
+    scale: 0;
+  }
+
+  to {
+    scale: 1;
+  }
+}
+  
+/*--Combate--*/
+.escudoDiv{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: blue;
+  opacity: 0.1;
+  z-index: 2;
+
+}
+.dañoDiv{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: red;
+  opacity: 0.3;
+  
+  z-index: 1;
+ 
+}
+@keyframes daño {
+  0% {
+  display: block;
+  }
+  100% {
+    display: none;
+  }
+
+}
+.saltoGif{
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-image: url("recursos/salto.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+  display: none;
+}
+/*--Perdido--*/
+.perdido{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+ background-color: #000;
+
+ z-index: 10;
+}
+.centroPerdido{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1ddc46;
+  font-size: 50px;
+  font-weight: bold;
+  z-index: 11;
+  background-color: #023a02;
+  border: 1px solid #1ddc46;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+.botonPerdido{
+  color: #1ddc46;
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 11;
+  background-color: #023a02;
+  border: 1px solid #1ddc46;
+  border-radius: 6px;
+  opacity: 1;
+
+}
+/*--Ganado--*/
+.ganado{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+ background-color: white;
+
+ z-index: 11;
+}
+.centroGanado{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #1ddc46;
+  font-size: 50px;
+  font-weight: bold;
+  z-index: 11;
+  background-color: #023a02;
+  border: 1px solid #1ddc46;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+}
+.botonGanado{
+  color: #1ddc46;
+  font-size: 30px;
+  font-weight: bold;
+  z-index: 11;
+  background-color: #023a02;
+  border: 1px solid #1ddc46;
+  border-radius: 6px;
+  opacity: 1;
+
+}
+/*Info*/
+.info{
+  position: absolute;
+  top: 1%;
+  right: 0.5%;
+  width: 50px;
+  height: 50px;
+  background-image: url("recursos/info.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+ z-index: 9;
+}
+.info:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+.fondoPausa{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+ background-color: #000;
+ opacity: 0.5;
+ z-index: 5;
+}
+/*---Tablet*/
+@media (max-width: 1206px) {
+  .botonera {
+    top: 10px;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .botonera button {
+    height: 15px;
+    font-size: 10px;
+  }
+
+  .temporizador {
+    font-size: 12px;
+    padding: 5px 15px;
+    height: 55px;
+   
+    z-index: 5;
+  }
+
+  .textoTiempo {
+    margin-top: 5px;
+  }
+
+  .cabina {
+    width: 190px;
+    height: 200px;
+    right: 30px;
+  }
+  .escena {
+    width: 177px;
+    height: 200px;
+    right: 0px;
+    position: absolute;
+    bottom: 160px;
+    left: 10%;
+  }
+
+  .lateral {
+    width: 30px;
+    z-index: 1;
+  }
+
+  .lateral2 {
+    width: 30px;
+    z-index: 1;
+  }
+
+  .luces {
+    top: 10px;
+    left: 10px;
+    height: 5px;
+    width: 25px;
+  }
+
+  .botonera {
+    top: 20px;
+    margin: 0;
+  }
+
+  .holo {
+    width: 100px;
+    height: 5px;
+    margin: -5px auto 0;
+  }
+
+  .card {
+    width: 150px;
+    height: 120px;
+    margin-top: 50px;
+  }
+
+  #shield-interface {
+    position: absolute;
+    top: 100px;
+    left: 0;
+  }
+
+  #shield-control {
+    width: 90px;
+    position: absolute;
+    top: 5px;
+  }
+
+  #shield-control::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  #energy-meterShield {
+    position: absolute;
+    top: 13px;
+    left: 80px;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+    perspective: 800px;
+    transform: rotateX(20deg);
+  }
+
+  #labelenergyShield {
+    position: absolute;
+    top: 0px;
+    left: 80px;
+    width: 50px;
+    height: 15px;
+    font-size: 10px;
+  }
+  #shield-interface {
+    position: absolute;
+    top: 100px;
+    left: 0;
+  }
+  #propulsor-interface {
+    position: absolute;
+    top: 100px;
+    left: 0;
+  }
+  #speed-slider{
+    width: 90px;
+    position: absolute;
+    top:5px;
+  }
+
+  #speed-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  
+  }
+  #mas{
+    position: absolute;
+    top: 7px;
+    left: 80px;
+    font-size: 9px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+  }
+  #menos{
+    position: absolute;
+    top: 7px;
+    left: 110px;
+    font-size: 9px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+  }
+  #labelVelocidad{
+    position: absolute;
+    top: 0px;
+    left: 95px;
+    font-size: 10px;
+  }
+  #labelDireccion{
+    position: absolute;
+    top: 40px;
+    left: 95px;
+    font-size: 10px;
+  }
+  #dch{
+    position: absolute;
+    top: 45px;
+    left: 110px;
+    height: 15px;
+    width: 15px;
+  }
+  #izq{
+    position: absolute;
+    top: 45px;
+    left: 80px;
+    height: 15px;
+    width: 15px;
+  }
+  .saltoE-front {
+    font-size: 12px;
+    padding: 10px 35px;
+  }
+}

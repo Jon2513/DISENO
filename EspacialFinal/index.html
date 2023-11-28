@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>SPACE</title>
+</head>
+
+<body>
+    <div class="game-container">
+        <div class="star" ></div>
+        <div class="star2" ></div>
+        <div class="star3" ></div>
+        <div class="star4" ></div>
+        <div class="perdido" style="display: none;">
+           
+            <div class="centroPerdido">
+                <h2>!Has perdido!</h2>
+                <button class="botonPerdido" onclick="volverJugar()">Volver a jugar</button>
+            </div>
+        </div>
+            <div class="ganado" style="display: none;">
+                <div class="centroGanado">
+                    <h2>!Has ganado!</h2>
+                    <button class="botonGanado" onclick="volverJugar()">Volver a jugar</button>
+                </div>
+            </div>
+            <div class="info" onclick="modalInfo()""></div>
+            <div class="modalInfo">
+                <span id="closeInfo" class="close">&times;</span>
+                <div class="modalContentInfo">
+                    <h6>Informacion:</h6>
+                    <p >El juego termina al saltar(no se contabilizan saltos de emergencia) 5 veces</p>
+                    <p >El juego finaliza cuando el tiempo, la integridad de caso, energía o los supervivientes llegan a 0</p>
+                    <p >Cada salto consumirá 20 de energía y un salto de emergencia 50 </p>
+                    <p>¡Suerte!</p>
+                </div>  
+            </div>
+        <div class="fondoPausa" style="display: none;"></div>
+        <div class="saltoGif"></div>
+        <div class="escudoTransparente" style="display: none;">
+            <div class="escudoDiv"></div>
+        </div>
+        <div class="dañoDiv" style="display: none;"></div>
+        <div class="modal">
+            <span id="cerrarModal" class="close2">&times;</span>
+            <div class="modalContent">
+                <h6>Enhorabuena ha recibido:</h6>
+                <p id="pEnergia"></p>
+                <p id="pPiezas"></p>
+                <p id="pSupervivientes"></p>
+            </div>
+                
+        </div>
+
+        <div id="recalentamientoBorde">
+            <div id="recalentamiento">
+                <label>Temperatura del motor de salto</label>
+                <progress class="tiempo" id="jump-progress" max="100" value="100"></progress>
+            </div>
+        </div>
+        <div id="naveEnemiga" style="display: none;"></div>
+
+        <div class="contenedor">
+            <div id="detalles" class="detalles">
+                <div class="labelDatos" id="labelSuper">Supervivientes</div>
+                <label id="labelDatosS" for="survivor-meter">0</label>
+                <meter class="meter" id="survivor-meter" min="0" max="200" value="50"></meter>
+                <div class="labelDatos" id="labelEnergia">Energía</div>
+                <label id="labelDatosE" for="energy-meter">0</label>
+                <meter class="meter" id="energy-meterD" min="0" max="100" value="50"></meter>
+                <label id="labelDatosD"  for="damage-meter">0</label>
+                <div class="labelDatos" id="labelCasco"></label>Integridad del casco</div>
+                <meter class="meter" id="damage-meter" min="0" max="100" value="25"></meter>
+            </div>
+        </div>
+        <div class="temporizadorBorde">
+            <div class="temporizador">
+
+                <label class="textoTiempo">Tiempo hasta el próximo escaneo Cylon:</label>
+                <input id="tiempo" type="time" name="eta" disabled><br>
+            </div>
+        </div>
+        <!-- HTML -->
+        <div class="saltoE">
+
+        </div>
+        <div class="saltoCaja">
+            <button class="saltoE-pushable" role="button" type="button" onclick="ocultarTodasLasInterfaces()">
+                <span class="saltoE-shadow"></span>
+                <span class="saltoE-edge"></span>
+                <span class="saltoE-front text">
+                    SALTO DE EMERGENCIA
+                </span>
+            </button>
+        </div>
+        <div class="Salto">
+            <button class="salto-pushable" role="button" type="button" onclick="ocultarTodasLasInterfaces()">
+                <span class="salto-shadow"></span>
+                <span class="salto-edge"></span>
+                <span class="salto-front text">
+                    SALTO</span>
+            </button>
+        </div>
+        <div class="holograma" >
+            <div class="base"></div>
+            <div class="basesombra"></div>
+            <div class="explicacion" style="display: none;"></div>
+            <div class="card" style="display: none;"></div>
+            <div class="holo" style="display: none;"></div>
+        </div>
+
+
+
+        <div class="lateral"></div>
+        <div class="lateral2"></div>
+        <div class="escena">
+            <div class="cabina">
+                <div class="ventana">
+                    <div class="vidrio">
+                        <div class="container">
+                            <div class="botonera">
+                                <button id=shield type="button" onclick="mostrarEscudoInterface()"></button>
+                                <button id="propulsor" type="button" onclick="mostrarPropulsorInterface()"></button>
+                                <button id="arma" type="button" onclick="mostrarArmaInterface()"></button>
+                                <button id="motor" type="button" onclick="mostrarMotorSaltoInterface()"></button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="luces">
+                    <div class="luz"></div>
+                    <div class="luz"></div>
+                    <div class="luz"></div>
+
+                </div>
+                <div id="shield-interface" style="display: none;">
+                    <label for="" class="shieldLabel">Escudo</label>
+                    
+                        <div  class="shieldInfo">0</div>
+                    
+                    <input type="range" id="shield-control" min="0" max="100" value="0">
+                </div>
+                <div id="propulsor-interface" style="display: none;">
+                    <label for="" class="enfriamientoLabel">Enfriamiento del Motor</label>
+                        <div for="" class="enfriamientoInfo">0</div>
+                    <input type="range" id="speed-slider" min="0" max="100" value="0"><br>
+                  
+                </div>
+                <div id="arma-interface" style="display: none;">
+                    <input id="radioLaser" type="radio" id="weapon1" name="weapon" style="display: none;">
+                    <div id="labelLaser" for="weapon1">Láseres</div><br>
+                    <label id="laser-meter">∞</label><br>
+                    <input id="radioMisil" type="radio" id="weapon2" name="weapon" style="display: none;">
+                    <div id="labelMisil" for="weapon2">Misiles Nucleares</div><br>
+                    <label id="ammunition-meter"></label><br>
+                    <button class="habilitado" id="disparar" type="button" onclick="disparar()">Disparar</button>
+                    <button id="recargar" type="button" onclick="recargar()">Recargar</button><br>
+                    <button id="cambiar" type="button" onclick="cambiarArma()">Cambiar Arma</button>
+                </div>
+                <div id="motor-salto-interface" style="display: none;">
+                    <button id="botonSalto" type="button" onclick="aterrizar()" disabled>Aterrizar</button>
+                    <button id="botonAterrizar" type="button" onclick="sumarRecursos()">Despegar</button>
+                </div>
+            </div>
+
+
+        </div>
+      
+       
+    </div>
+   
+    </div>
+
+    <script src="planeta.js"></script>
+    <script src="nave.js"></script>
+    <script src="naveEnemiga.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/b05cffd0ab.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
