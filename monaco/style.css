@@ -1,0 +1,46 @@
+body{
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#coche{
+    height: 20px;
+    width: 50px;
+    background-image: url("f1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+    rotate: 180deg;
+}
+#circuito{
+    position: absolute;
+    top: 100px;
+    height: 400px;
+    width: 1100px;
+    background-image: url("MONACO.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 1;
+    z-index: 0;
+
+}
+
+#svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+#car{
+    width: 20px;
+}
