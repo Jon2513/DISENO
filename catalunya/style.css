@@ -1,0 +1,83 @@
+body{
+    background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#circuito{
+    position: absolute;
+    top: 115px;
+    height: 500px;
+    width: 1300px;
+    background-image: url("CIRCUITOCATALUÑA.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity:0.8;
+    z-index: -1;
+}
+
+#svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#svg2{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#svg3{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#car2{
+    transform: rotate(180deg);
+    height: 19px;
+    width: 19px;
+}
+#car1{
+    height: 25px;
+    width: 25px;
+}
+#car3{
+    transform: rotate(-90deg);
+    height: 18px;
+    width: 18px;
+    opacity: 0;
+}
+#explosion{
+    height: 30px;
+    width: 30px;
+    opacity: 1;
+    background-image: url("explosion.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 178px;
+    left: 535px;
+    opacity: 0;
+    animation: explosion 2.5s linear ;
+    animation-delay: 12s;
+}
+@keyframes explosion {
+    0%   {opacity: 0;}
+    25%  {opacity: 1;}
+    80% {
+        opacity: 1;
+        scale: 2;
+    }
+    100% {
+        opacity: 0;
+        scale: 2.5;
+    }
+}
+
