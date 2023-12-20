@@ -1,0 +1,117 @@
+#keyart-0 {
+    background-image: url(res/parallax0.png);
+}
+
+#keyart-1 {
+    background-image: url(res/parallax1.png);
+}
+
+#keyart-2 {
+    background-image: url(res/parallax2.png);
+}
+
+#keyart-3 {
+    background-image: url(res/parallax3.png);
+}
+
+#keyart-4 {
+    background-image: url(res/parallax4.png);
+}
+
+#keyart-5 {
+    background-image: url(res/parallax5.png);
+}
+
+#keyart-6 {
+    background-image: url(res/parallax6.png);
+}
+
+#keyart-7 {
+    background-image: url(res/parallax7.png);
+}
+
+#keyart-8 {
+    background-image: url(res/parallax8.png);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+#parallax {
+    perspective: 100px;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: -1%;
+}
+
+.parallax {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#layer_0 {
+    background-image: url("res/parallax0.png");
+    transform: translateZ(-300px) scale(5);
+}
+
+#layer_1 {
+    background-image: url("res/parallax1.png");
+    transform: translateZ(-350px) scale(4.5);
+}
+
+#layer_2 {
+    background-image: url("res/parallax2.png");
+    transform: translateZ(-300px) scale(4);
+}
+
+#layer_3 {
+    background-image: url("res/parallax3.png");
+    transform: translateZ(-250px) scale(3.5);
+}
+
+#layer_4 {
+    background-image: url("res/parallax4.png");
+    transform: translateZ(-200px) scale(3);
+}
+
+#layer_5 {
+    background-image: url("res/parallax5.png");
+    transform: translateZ(-150px) scale(2.5);
+}
+
+#layer_6 {
+    background-image: url("res/parallax6.png");
+    transform: translateZ(-100px) scale(2);
+}
+
+#layer_7 {
+    background-image: url("res/parallax7.png");
+    transform: translateZ(-50px) scale(1.5);
+}
+
+#layer_8 {
+    background-image: url("res/parallax8.png");
+    transform: translateZ(0) scale(1);
+}
+
+#cover {
+    background-color: #210002ff;
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 99%;
+    left: 0;
+    right: 0;
+}
