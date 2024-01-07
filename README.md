@@ -20,11 +20,8 @@ Este repositorio contiene los proyectos desarrollados durante la asignatura de D
 
 ## Contribuciones
 
-¡Las contribuciones son bienvenidas! Si encuentras errores, realizas mejoras o deseas agregar un nuevo proyecto, no dudes en abrir un problema o enviar un pull request. Asegúrate de seguir las [pautas de contribución](CONTRIBUTING.md).
+¡Las contribuciones son bienvenidas! Si encuentras errores, realizas mejoras o deseas agregar un nuevo proyecto, no dudes en abrir un problema o enviar un pull request.
 
-## Licencia
-
-Este repositorio está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
 
 ---
 
